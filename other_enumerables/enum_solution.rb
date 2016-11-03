@@ -23,6 +23,13 @@
     # Method
     def another_reject
       #use another_each
+      collection = []
+      another_each do |i|
+        if yield(i) == false
+          collection << i
+        end
+      end
+      collection    
     end
 
     # another_find
