@@ -41,6 +41,13 @@
     # Method
     def another_find
       #use another_each
+      answer = nil
+      another_each do |i|
+        if answer == nil && yield(i) == true
+            answer = 1
+          end
+        end
+        answer    
     end
 
     # another_map
