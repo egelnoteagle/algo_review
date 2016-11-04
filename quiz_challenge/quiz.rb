@@ -1,3 +1,4 @@
-File.open("quiz_source_text.txt").each do |line|
-  puts line
-end  
+lines = []
+answers = []
+text = File.open("quiz_source_text.txt").read
+
