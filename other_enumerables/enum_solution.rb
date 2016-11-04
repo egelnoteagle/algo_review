@@ -68,6 +68,29 @@
 
   end
 
+   #Bonus *******************************************
+
+    # another_map!
+    # Duplicates what the #map! method does. do not use #map!
+    # replaces the original array with the results of running block once for every element in the original array
+    # the bang at the end of the method means that it is desctructive, this means that if replaces the object that it is called on.
+    # look at #replace
+
+    def another_map!
+      # another_map test
+      destructive_map_example_array = [1,2,3,4]
+      first_object_id = destructive_map_example_array.object_id
+      destructive_map_example_array.another_map! { |x| x * x }
+      destructive_map_example_test = destructive_map_example_array == [1, 4, 9, 16]
+      second_object_id = destructive_map_example_array.object_id
+
+      if destructive_map_example_test && first_object_id == second_object_id
+        puts "Bonus Level Unlocked"
+      else
+        puts "Bonus Level Locked"
+      end
+    end
+
   # Exercise 2 Driver Code
 
     # another_reject test
@@ -98,4 +121,17 @@
       puts "#another_map - Pass"
     else
       puts "#another_map - F"
+    end
+
+    # another_map test
+    destructive_map_example_array = [1,2,3,4]
+    first_object_id = destructive_map_example_array.object_id
+    destructive_map_example_array.another_map! { |x| x * x }
+    destructive_map_example_test = destructive_map_example_array == [1, 4, 9, 16]
+    second_object_id = destructive_map_example_array.object_id
+
+    if destructive_map_example_test && first_object_id == second_object_id
+      puts "Bonus Level Unlocked"
+    else
+      puts "Bonus Level Locked"
     end
